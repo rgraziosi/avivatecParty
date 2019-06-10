@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AvivatecParty.Application\AvivatecParty.Application.csproj" />
+    <ProjectReference Include="..\AvivatecParty.Domain\AvivatecParty.Domain.csproj" />
+    <ProjectReference Include="..\AvivatecParty.Infra.CrossCutting.Bus\AvivatecParty.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\AvivatecParty.Infra.Data\AvivatecParty.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
