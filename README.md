@@ -14,7 +14,7 @@
 * A implementação do FrontEnd será gerada em um próximo commit
 * A implementação de testes esta programada para um terceiro momento
 * A camada de application foi mantida por uma questão didatica, podendo ser refatorado para services já que se trata de um SPA
-* A explicação da ideia de produta será explicada quando o front end for finalizado
+* A explicação da ideia de produto será explicado quando o front end for finalizado
  
 <hr>
 
