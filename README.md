@@ -3,15 +3,18 @@
 ## Estado atual
  
  Foi Implementado o Backend, utilizando
+ * .Net Core 2.2
  * DDD
  * AutoMapper
  * CQRS
+ * EntityFramework Core
  * DAPPER
  * SWAGGER
  
  Foi Inciado o Frontend, utilizando
 * Bootstrap
 * Scss
+* Responsividade
  
 > Pontos importantes: 
 * A solução tem por objetivo um a concepção de um produto, utilizando além da proposta de solução, algo que possa gerar valor
