@@ -6,6 +6,7 @@ import { HomeComponent } from './core/pages/home/home.component';
 
 import { ToastrModule } from 'ngx-toastr';
 
+import { ParticipanteModule } from './participante/participante.module';
 
 // Shared
 import { SharedModule } from './shared/shared.module';
@@ -32,6 +33,7 @@ import { PartyComponent } from './core/pages/party/party.component';
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
     ToastrModule.forRoot(),
+    ParticipanteModule,
     SharedModule
   ],
   providers: [ SeoService ],

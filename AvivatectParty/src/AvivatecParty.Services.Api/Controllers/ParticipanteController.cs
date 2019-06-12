@@ -85,8 +85,8 @@ namespace AvivatecParty.Services.Api.Controllers
         }
 
         [HttpGet]
-        [Route("participantes/categorias")]
-        public IEnumerable<LocalViewModel> ObterCategorias()
+        [Route("participantes/locais")]
+        public IEnumerable<LocalViewModel> ObterLocais()
         {
             //return new LocalViewModel().ListarLocais();
             return _participanteAppService.GetAllLocais();

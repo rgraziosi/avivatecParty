@@ -22,6 +22,10 @@ export class DateUtils {
     public static getMyDatePickerDate(myDate: any): Date {
         return new Date(myDate.date.year, myDate.date.month - 1, myDate.date.day);
     }
+    
+    public static getMyDatePickerDateString(myDate: any): string {
+        return myDate.date.day + '/' + ('00' + (myDate.date.month - 1)).slice(-2) + '/' + myDate.date.year;
+    }
 
     public static getMyDatePickerOptions(): IMyOptions {
         const dateNow = this.convertUTCDateToLocalDate(new Date());

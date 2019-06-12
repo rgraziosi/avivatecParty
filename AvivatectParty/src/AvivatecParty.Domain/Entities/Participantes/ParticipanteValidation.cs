@@ -42,8 +42,8 @@ namespace AvivatecParty.Domain.Entities
         {
             RuleFor(obj => obj.Senha)
                 .NotEmpty().WithMessage(Messages.MSG_PARTICIPANTE_SENHA_NULL)
-                .Length(5, 20).WithMessage(Messages.MSG_PARTICIPANTE_SENHA_MIN_MAX)
-                .Matches(".*([A-Za-z][0-9]|[0-9][A-Za-z]).*").WithMessage(Messages.MSG_PARTICIPANTE_SENHA_VALIDO);
+                .Length(5, 20).WithMessage(Messages.MSG_PARTICIPANTE_SENHA_MIN_MAX);
+                //.Matches(".*([A-Za-z][0-9]|[0-9][A-Za-z]).*").WithMessage(Messages.MSG_PARTICIPANTE_SENHA_VALIDO);
         }
 
         private void ValidarEmail()
