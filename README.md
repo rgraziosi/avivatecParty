@@ -3,18 +3,24 @@
 ## Estado atual
  
  Foi Implementado o Backend, utilizando
+ * .Net Core 2.2
  * DDD
  * AutoMapper
  * CQRS
+ * EntityFramework Core
  * DAPPER
  * SWAGGER
  
+ Foi Inciado o Frontend, utilizando
+* Bootstrap
+* Scss
+* Responsividade
+ 
 > Pontos importantes: 
 * A solução tem por objetivo um a concepção de um produto, utilizando além da proposta de solução, algo que possa gerar valor
-* A implementação do FrontEnd será gerada em um próximo commit
 * A implementação de testes esta programada para um terceiro momento
 * A camada de application foi mantida por uma questão didatica, podendo ser refatorado para services já que se trata de um SPA
-* A explicação da ideia de produto será explicado quando o front end for finalizado
+* A geração de formulário e finalização do front será finalizada no proximo commit
  
 <hr>
 
