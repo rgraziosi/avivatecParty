@@ -19,6 +19,7 @@ import { SobreComponent } from './core/pages/sobre/sobre.component';
 import { CadastreComponent } from './core/pages/cadastre/cadastre.component';
 import { AcompanheComponent } from './core/pages/acompanhe/acompanhe.component';
 import { PartyComponent } from './core/pages/party/party.component';
+import { EditarComponent } from './core/pages/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PartyComponent } from './core/pages/party/party.component';
     SobreComponent,
     CadastreComponent,
     AcompanheComponent,
-    PartyComponent
+    PartyComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

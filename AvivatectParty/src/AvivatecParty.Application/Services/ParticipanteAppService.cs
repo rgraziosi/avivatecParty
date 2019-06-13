@@ -6,6 +6,7 @@ using AvivatecParty.Domain.Entities;
 using AvivatecParty.Domain.Entities.Participantes.Commands;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AvivatecParty.Application.Services
 {
@@ -37,7 +38,9 @@ namespace AvivatecParty.Application.Services
 
         public IEnumerable<ParticipanteViewModel> GetAll()
         {
+            var locais = _mapper.Map<IEnumerable<LocalViewModel>>(_participanteRepository.GetAllLocais());
             return _mapper.Map<IEnumerable<ParticipanteViewModel>>(_participanteRepository.GetAll());
+
         }
 
         public IEnumerable<LocalViewModel> GetAllLocais()

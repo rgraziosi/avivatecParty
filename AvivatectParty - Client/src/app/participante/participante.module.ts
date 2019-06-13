@@ -8,9 +8,12 @@ import { ParticipanteService } from './services/participante.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MyDatePickerModule } from 'mydatepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListaParticipantesComponent } from './components/lista-participantes/lista-participantes.component';
+import { RouterModule } from '@angular/router';
+import { EditarParticipanteComponent } from './components/editar-participante/editar-participante.component';
 
 @NgModule({
-  declarations: [AdicionarParticipanteComponent],
+  declarations: [AdicionarParticipanteComponent, ListaParticipantesComponent, EditarParticipanteComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -19,12 +22,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     MyDatePickerModule,
     BrowserAnimationsModule,
+    RouterModule
   ],
   providers: [
     Title,
     SeoService,
     ParticipanteService
   ],
-  exports: [AdicionarParticipanteComponent]
+  exports: [AdicionarParticipanteComponent, ListaParticipantesComponent, EditarParticipanteComponent]
 })
 export class ParticipanteModule { }

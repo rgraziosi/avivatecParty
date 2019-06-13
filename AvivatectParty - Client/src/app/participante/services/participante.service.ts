@@ -50,7 +50,7 @@ export class ParticipanteService extends BaseService {
 
   excluirParticipante(id: string): Observable<Participante> {
     const response = this.http
-        .delete(this.UrlService + 'participante/' + id)
+        .delete(this.UrlService + 'participantes/' + id)
         .map(super.extractData)
         .catch((super.serviceError));
     return response;

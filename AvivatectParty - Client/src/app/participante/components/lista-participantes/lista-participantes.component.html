@@ -1,0 +1,47 @@
+<div class="p-5">
+  <h2>Lista dos Participantes</h2>
+
+  <div class='text-danger' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+  <div class="page-size">
+    <div class="panel panel-default">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Login</th>
+            <th>Melhor Dia</th>
+            <th>Quer ser organizador</th>
+            <th>Local</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let participante of participantes'>
+            <td>{{ participante.nome }}</td>
+            <td>{{ participante.email  }}</td>
+            <td>{{ participante.login  }}</td>
+            <td>{{ participante.melhorDiaHora | date:'dd/MM/yyyy' }}</td>
+
+            <td [ngSwitch]="participante.organizador">
+              <span *ngSwitchCase="true" class="btn btn-success">Sim</span>
+              <span *ngSwitchCase="false" class="btn btn-info">Não</span>
+            </td>
+
+            <td>{{ participante.local.nome }}</td>
+
+            <td>
+              <button [routerLink]="['/editar', participante.id]" title="Detalhes" class="btn btn-primary mr-2">
+                Editar
+              </button>
+              <button (click)="excluirParticipante(participante.id)" title="Detalhes" class="btn btn-danger">
+                Excluir
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

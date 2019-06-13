@@ -14,7 +14,7 @@ export class DateUtils {
         return newDate;
     }
 
-    public static setMyDatePickerDate(myDate: any): Object {
+    public static setMyDatePickerDate(myDate: any): any {
         const pickerDate = new Date(myDate);
         return { date: { year: pickerDate.getFullYear(), month: pickerDate.getMonth() + 1, day: pickerDate.getDate() } };
     }

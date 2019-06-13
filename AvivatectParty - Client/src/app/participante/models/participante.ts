@@ -4,9 +4,9 @@ export class Participante {
     email: string;
     login: string;
     senha: string;
-    melhoDiaHora: Date;
+    melhorDiaHora: Date;
     localId: string;
-    Organizador: boolean;
+    organizador: boolean;
 }
 
 export interface Local {

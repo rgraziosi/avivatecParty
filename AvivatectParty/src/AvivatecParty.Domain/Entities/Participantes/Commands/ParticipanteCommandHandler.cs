@@ -66,13 +66,13 @@ namespace AvivatecParty.Domain.Entities.Participantes.Commands
 
         public void Handle(RemoverParticipanteCommand message)
         {
-            if (!ParticipanteExistente(message.Participante.Id, message.MessageType)) return;
+            if (!ParticipanteExistente(message.Id, message.MessageType)) return;
 
-            _participanteRepository.Remove(message.Participante.Id);
+            _participanteRepository.Remove(message.Id);
 
             if (Commit())
             {
-                _bus.RaiseEvent(new ParticipanteRemovidoEvent(message.Participante.Id));
+                _bus.RaiseEvent(new ParticipanteRemovidoEvent(message.Id));
             }
         }
 

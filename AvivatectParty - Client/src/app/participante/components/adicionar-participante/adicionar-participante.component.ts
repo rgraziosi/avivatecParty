@@ -4,7 +4,7 @@ import { DateUtils } from 'src/app/common/data-type-utils/date-utils';
 import { ParticipanteService } from '../../services/participante.service';
 import { Participante, Local } from '../../models/participante';
 import { GenericValidator } from 'src/app/common/validation/generic-form-validator';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DatePipe } from '@angular/common';
 
@@ -20,10 +20,14 @@ export class AdicionarParticipanteComponent implements OnInit {
   public myDatePickerOptions = DateUtils.getMyDatePickerOptions();
 
   public errors: any[] = [];
-  public participante: Participante ;
+  public participante: Participante;
   public locais: Local[];
+  public idParticipante;
 
-  constructor(private participanteService: ParticipanteService, private toastr: ToastrService, private router: Router,) {
+  constructor(private participanteService: ParticipanteService,
+              private toastr: ToastrService,
+              private router: Router) {
+
 
     // Erro de versão validator e toast - necessário refatoração
     this.validationMessages = {
@@ -53,7 +57,8 @@ export class AdicionarParticipanteComponent implements OnInit {
     this.genericValidator = new GenericValidator(this.validationMessages);
     this.participante = new Participante();
 
-   }
+
+  }
 
   private validationMessages: { [key: string]: { [key: string]: string } };
   private genericValidator: GenericValidator;
@@ -64,25 +69,23 @@ export class AdicionarParticipanteComponent implements OnInit {
     this.participante.email = '';
     this.participante.login = '';
     this.participante.senha = '';
-    this.participante.melhoDiaHora = null;
-    this.participante.localId = '';
-    this.participante.Organizador = false;
+    this.participante.organizador = false;
+
+
 
     this.participanteService.obterLocais()
       .subscribe(locais => this.locais = locais,
-      error => this.errors);
+        error => this.errors);
   }
 
   adicionarParticipante(form: FormGroup) {
-    console.log(form);
-    if (form.value.melhorDiaHora) { this.participante.melhoDiaHora = DateUtils.getMyDatePickerDate(form.value.melhorDiaHora); }
-    console.log(this.participante);
+    if (form.value.melhorDiaHora) { this.participante.melhorDiaHora = DateUtils.getMyDatePickerDate(form.value.melhorDiaHora); }
     if (form.valid) {
       this.participanteService.registrarParticipante(this.participante)
-      .subscribe(
-      result => { this.onSaveComplete(); },
-      fail => { this.onError(fail); }
-    );
+        .subscribe(
+          result => { this.onSaveComplete(); },
+          fail => { this.onError(fail); }
+        );
     }
   }
 
@@ -93,12 +96,11 @@ export class AdicionarParticipanteComponent implements OnInit {
 
   onSaveComplete() {
     this.errors = [];
-
-    this.toastr.success('Participante Registrado com Sucesso!', 'Oba :D', {
-      timeOut: 3000
-    });
+    this.toastr.success('Participante Registrado com Sucesso!', 'Oba :D', { timeOut: 2000 });
 
     this.participante = new Participante();
+
+    setTimeout(() => this.router.navigate(['/acompanhe']), 2000);
 
   }
 
