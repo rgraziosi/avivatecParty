@@ -6,6 +6,7 @@
  * .Net Core 2.2
  * DDD
  * AutoMapper
+ * FluentValidation
  * CQRS (Somente estrututural, para um exemplo real seria necessário um banco de dados não estruturado)
  * EF Core
  * DAPPER (exemplo comentado)
